@@ -7,12 +7,9 @@ from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-CHROMA_PATH = "data/chroma"
-DATA_PATH = "data/pdf"
 
-
-def load_documents():
-    return PyPDFDirectoryLoader(DATA_PATH).load()
+def load_documents(data_path: str) -> list[Document]:
+    return PyPDFDirectoryLoader(data_path).load()
 
 
 def split_documents(documents: list[Document]):
@@ -50,13 +47,13 @@ def calculate_chunk_ids(chunks):
     return chunks
 
 
-def clear_database():
-    if os.path.exists(DATA_PATH):
-        shutil.rmtree(DATA_PATH)
+def clear_database(db_path: str):
+    if os.path.exists(db_path):
+        shutil.rmtree(db_path)
 
 
-def add_to_chroma(chunks: list[Document]):
-    db = Chroma(persist_directory=CHROMA_PATH, embedding_function=get_embedding_function())
+def add_to_chroma(chunks: list[Document], chroma_path: str):
+    db = Chroma(persist_directory=chroma_path, embedding_function=get_embedding_function())
 
     # Calculate Page IDs
     chunks_with_ids = calculate_chunk_ids(chunks)
@@ -76,6 +73,5 @@ def add_to_chroma(chunks: list[Document]):
         print(f"👉 Adding new documents to DB: {len(new_chunks)}")
         new_chunks_ids = [chunk.metadata["id"] for chunk in new_chunks]
         db.add_documents(new_chunks, ids=new_chunks_ids)
-        db.persist()
     else:
         print("✅ No new documents to add")
