@@ -37,7 +37,7 @@ def calculate_chunk_ids(chunks):
         if current_page_id == last_page_id:
             current_chunk_index += 1
         else:
-            current_chunk_id = 0
+            current_chunk_index = 0
 
         chunk_id = f"{current_page_id}:{current_chunk_index}"
         last_page_id = current_page_id
@@ -75,3 +75,15 @@ def add_to_chroma(chunks: list[Document], chroma_path: str):
         db.add_documents(new_chunks, ids=new_chunks_ids)
     else:
         print("✅ No new documents to add")
+
+def db_reset(db_path: str, data_path):
+    print("✨ Resetting database")
+    clear_database(db_path)
+    print("🔍Checking for new documents...")
+    populate_db(data_path, db_path)
+
+def populate_db(data_root, chroma_root):
+    print("🔍Checking for new documents...")
+    documents = load_documents(data_root)
+    chunks = split_documents(documents)
+    add_to_chroma(chunks, chroma_root)

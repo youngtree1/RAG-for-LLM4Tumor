@@ -6,8 +6,7 @@
 - outputs to std and excel
 
 ## Usage
-
-- when using with openai please add a .env file with you openai apikey
+- the data 
 - further insights to usage use:
 ```bash
 ❯ python rag_query.py -h
@@ -27,5 +26,6 @@ options:
 
 OwO Happy Chatting UwU
 
-
 ```
+### For Open AI API users
+- the program expects the OPENAI_API_KEY in an .env file
