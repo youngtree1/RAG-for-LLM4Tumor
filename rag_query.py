@@ -12,10 +12,10 @@ def main():
                                      )
     parser.add_argument('-v', '--version', action='version',
                         version='%(prog)s {version}'.format(version=__version__))
-    parser.add_argument("-p", "--populate_db", action="store_true", help="populate database")
-    parser.add_argument("--reset", action="store_true", help="Reset database")
-    parser.add_argument("-x", "--excel-path", help="uses the excel path")
-    parser.add_argument("-q", "--query_text", help="stores a query text")
+    parser.add_argument("-p", "--populate_db", action="store_true", help="populates database")
+    parser.add_argument("--reset", action="store_true", help="Resets database")
+    parser.add_argument("-x", "--excel-path", help="uses the excel file to create a series of queries")
+    parser.add_argument("-q", "--query_text", help="uses a line of text from stdin as query")
     args = parser.parse_args()
 
     if args.reset:

@@ -1,8 +1,4 @@
-data/chroma/*.sqlite3
-data/chroma/*/
-data/excel/*.xlsx
-data/pdfs/*.pdf
-
+data/
 .env
 .venv/
 .idea/
