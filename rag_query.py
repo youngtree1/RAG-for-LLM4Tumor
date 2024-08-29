@@ -9,7 +9,7 @@ __version__ = "1.0.0"
 def main():
     parser = argparse.ArgumentParser(prog="rag_query",
                                      description="creating and querying a document chat",
-                                     epilog="OwO Happy Chatting UwU")
+                                     )
     parser.add_argument('-v', '--version', action='version',
                         version='%(prog)s {version}'.format(version=__version__))
     parser.add_argument("-p", "--populate_db", action="store_true", help="populate database")

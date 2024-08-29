@@ -2,11 +2,10 @@
 
 ## Functionality
 - reads single line queries
-- reads excel files with single column of questions
-- outputs to std and excel
+- reads Excel files with single column of questions
+- outputs to stdout and excel
 
 ## Usage
-- the data 
 - further insights to usage use:
 ```bash
 ❯ python rag_query.py -h
