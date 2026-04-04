@@ -5,7 +5,29 @@ Built as the technical foundation for a clinical research study at Mannheim Univ
 
 ## Publication
 
-C. Y. Tobias Speer et al., *"Improving accuracy and source transparency in responses to soft tissue sarcoma queries using GPT-4o enhanced with German evidence-based guidelines"*, **Oncology Research and Treatment**, February 2025. (Peer-reviewed)
+Li C-P, Jia W-W, Chu Y, Menge F, Speer T, Reißfelder C, Hohenberger P, Jakob J, Yang C.
+**Improving Accuracy and Source Transparency in Responses to Soft Tissue Sarcoma Queries Using GPT-4o Enhanced with German Evidence-Based Guidelines.**
+*Oncology Research and Treatment.* 2025;48(6):351–359.
+https://doi.org/10.1159/000544978
+
+<details>
+<summary>BibTeX</summary>
+
+```bibtex
+@article{Li2025,
+  author    = {Li, Cheng-Peng and Jia, Wei-Wei and Chu, Yuan and Menge, Franka and Speer, Tobias and Rei{\ss}felder, Christoph and Hohenberger, Peter and Jakob, Jens and Yang, Cui},
+  title     = {Improving Accuracy and Source Transparency in Responses to Soft Tissue Sarcoma Queries Using {GPT-4o} Enhanced with {German} Evidence-Based Guidelines},
+  journal   = {Oncology Research and Treatment},
+  year      = {2025},
+  volume    = {48},
+  number    = {6},
+  pages     = {351--359},
+  doi       = {10.1159/000544978},
+  publisher = {S. Karger AG}
+}
+```
+
+</details>
 
 This system was developed to evaluate whether RAG-augmented GPT-4o responses to clinical queries about soft tissue sarcomas are more accurate and source-transparent than baseline LLM responses. The RAG pipeline ingests German evidence-based clinical guidelines (PDFs) into a Chroma vector store and uses them to ground GPT-4o answers with retrievable source references.
 
